@@ -2,7 +2,9 @@
   "name": "requirejs-library",
   "version": "1.0.0",
 
-  "dependencies": {},
+  "dependencies": {
+    "underscore-amd": "latest"
+  },
 
   "devDependencies": {
     "requirejs": "2.1.8",

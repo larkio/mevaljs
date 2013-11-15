@@ -4,8 +4,9 @@ define([
   'dasherize',
   'random',
   'slugify',
-  'trim'
-], function(camelize, capitalize, dasherize, random, slugify, trim) {
+  'trim',
+  'parse'
+], function(camelize, capitalize, dasherize, random, slugify, trim, parse) {
 
   // Object Contructor
   var mylib = function(obj) {
@@ -22,6 +23,7 @@ define([
   mylib.random = random;
   mylib.slugify = slugify;
   mylib.trim = trim;
+  mylib.parse = parse;
 
   return mylib;
 });

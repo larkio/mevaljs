@@ -24,7 +24,9 @@
     "indent":    2
   },
 
-  "dependencies": {},
+  "dependencies": {
+    "underscore-amd": "latest"
+  },
 
   "devDependencies": {
     "karma": "0.10.x",
