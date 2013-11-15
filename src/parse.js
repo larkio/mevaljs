@@ -12,6 +12,15 @@ define(['underscore', 'pegjsParser'], function(_, pegjsParser) {
 		}
 	}
 
+	function getDpi(value) {
+		if(value.unit === "dpcm") {
+			return value.value * 2.54;
+		}
+		else if(value.unit === "dpi") {
+			return value.value;
+		}
+	}
+
 	function checkFeature(featureType, value, env) {
 		var featureType = featureType.toLowerCase();
 
@@ -40,6 +49,20 @@ define(['underscore', 'pegjsParser'], function(_, pegjsParser) {
 			var pixels = getPixels(value);
 
 			if(env.width < pixels) {
+				return true;
+			}
+		}
+		else if("min-resolution" === featureType) {
+			var dpi = getDpi(value);
+
+			if(env.resolution > dpi) {
+				return true;
+			}
+		}
+		else if("max-resolution" === featureType) {
+			var dpi = getDpi(value);
+
+			if(env.resolution < dpi) {
 				return true;
 			}
 		}

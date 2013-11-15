@@ -1308,6 +1308,17 @@ module.exports = (function(){
                   matchFailed("\"dpi\"");
                 }
               }
+              if (result0 === null) {
+                if (input.substr(pos, 4) === "dpcm") {
+                  result0 = "dpcm";
+                  pos += 4;
+                } else {
+                  result0 = null;
+                  if (reportFailures === 0) {
+                    matchFailed("\"dpcm\"");
+                  }
+                }
+              }
             }
           }
         }

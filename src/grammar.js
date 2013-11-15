@@ -38,7 +38,7 @@ number
   = number:[0-9.]+ { return parseFloat(number.join(""), 10); }
 
 unit
-  = "px" / "rem" / "em" / "dpi"
+  = "px" / "rem" / "em" / "dpi" / "dpcm"
 
 S = " "
   / "\t"

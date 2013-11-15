@@ -70,6 +70,25 @@ define(['parse'], function(Parse) {
 				width: 39
 			})).toBeTruthy();
 		});
-	});
 
+		it('media type 5', function() {
+			expect(Parse.eval(Parse.parse("print"), {
+				mediaType: "print",
+				height: 53,
+				width: 39
+			})).toBeTruthy();
+		});
+		
+		it('(min-resolution: 300dpcm)', function() {
+			expect(Parse.eval(Parse.parse("(min-resolution: 300dpcm)"), {
+				resolution: 900
+			})).toBeTruthy();
+		});
+
+		it('(max-resolution: 300dpcm)', function() {
+			expect(Parse.eval(Parse.parse("(max-resolution: 300dpcm)"), {
+				resolution: 50
+			})).toBeTruthy();
+		});
+	});
 });
