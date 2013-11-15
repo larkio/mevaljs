@@ -66,6 +66,13 @@ define(['underscore', 'pegjsParser'], function(_, pegjsParser) {
 				return true;
 			}
 		}
+		else if("orientation" === featureType) {
+			if("orientation" === value.type) {
+				if(value.value === env.orientation) {
+					return true;
+				}
+			}
+		}
 
 		return false;
 	}

@@ -90,5 +90,12 @@ define(['parse'], function(Parse) {
 				resolution: 50
 			})).toBeTruthy();
 		});
+		it('(min-width: 700px) and (orientation: landscape) ', function() {
+			expect(Parse.eval(Parse.parse("(min-width: 700px) and (orientation: landscape)"), {
+				orientation: "landscape",
+				resolution: 50,
+				width: 900
+			})).toBeTruthy();
+		});
 	});
 });

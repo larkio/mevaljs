@@ -27,12 +27,16 @@ media_feature
   / "color-index" / "min-color-index" / "max-color-index"
   / "monochrome" / "min-monochrome" / "max-monochrome"
   / "resolution" / "min-resolution" / "max-resolution"
-  / "scan" / "grid"
+  / "scan" / "grid" / "orientation"
 
 value
   = num:number S* "/" S* den:number { return { numerator: num, denominator: den, type: "ratio" }; }
   / number:number unit:unit { return { value: number, unit: unit, type: "number" }; }
   / number:number { return { number: number, type: "number" }; }
+  / val:orientation { return { type: "orientation", value: val }; }
+
+orientation
+  = "landscape" / "portrait"
 
 number
   = number:[0-9.]+ { return parseFloat(number.join(""), 10); }

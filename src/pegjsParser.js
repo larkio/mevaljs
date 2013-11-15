@@ -43,6 +43,7 @@ module.exports = (function(){
         "expression": parse_expression,
         "media_feature": parse_media_feature,
         "value": parse_value,
+        "orientation": parse_orientation,
         "number": parse_number,
         "unit": parse_unit,
         "S": parse_S
@@ -1095,6 +1096,17 @@ module.exports = (function(){
                                                                           matchFailed("\"grid\"");
                                                                         }
                                                                       }
+                                                                      if (result0 === null) {
+                                                                        if (input.substr(pos, 11) === "orientation") {
+                                                                          result0 = "orientation";
+                                                                          pos += 11;
+                                                                        } else {
+                                                                          result0 = null;
+                                                                          if (reportFailures === 0) {
+                                                                            matchFailed("\"orientation\"");
+                                                                          }
+                                                                        }
+                                                                      }
                                                                     }
                                                                   }
                                                                 }
@@ -1220,6 +1232,42 @@ module.exports = (function(){
             }
             if (result0 === null) {
               pos = pos0;
+            }
+            if (result0 === null) {
+              pos0 = pos;
+              result0 = parse_orientation();
+              if (result0 !== null) {
+                result0 = (function(offset, val) { return { type: "orientation", value: val }; })(pos0, result0);
+              }
+              if (result0 === null) {
+                pos = pos0;
+              }
+            }
+          }
+        }
+        return result0;
+      }
+      
+      function parse_orientation() {
+        var result0;
+        
+        if (input.substr(pos, 9) === "landscape") {
+          result0 = "landscape";
+          pos += 9;
+        } else {
+          result0 = null;
+          if (reportFailures === 0) {
+            matchFailed("\"landscape\"");
+          }
+        }
+        if (result0 === null) {
+          if (input.substr(pos, 8) === "portrait") {
+            result0 = "portrait";
+            pos += 8;
+          } else {
+            result0 = null;
+            if (reportFailures === 0) {
+              matchFailed("\"portrait\"");
             }
           }
         }
