@@ -7,7 +7,7 @@ module.exports = function(grunt) {
           // All paths will be relative to this baseUrl
           baseUrl: "src",
           // Tells r.js that you want everything in one file
-          out: "dist/mylib.js",
+          out: "dist/meval.js",
           // Set paths for modules (optional, just less typing)
           paths: {
             almond: '../bower_components/almond/almond',
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
           },
           // This lines tells r.js to include "almond" and "mylib" into the final file
           // specified in out property above
-          include: ['almond', 'mylib'],
+          include: ['almond', 'meval'],
           // Adds compatibility for AMD, CommonJS and Browser globals
           wrap: {
             startFile: 'src/_start.js',

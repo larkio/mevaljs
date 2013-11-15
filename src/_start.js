@@ -7,6 +7,6 @@
     module.exports = factory();
   } else {
     // Browser globals (mylib is your global library identifier)
-    window.mylib = factory();
+    window.meval = factory();
   }
 }(this, function () {

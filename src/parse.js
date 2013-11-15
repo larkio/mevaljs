@@ -89,7 +89,6 @@ define(['underscore', 'pegjsParser'], function(_, pegjsParser) {
 	}
 
 	function eval(ast, env) {
-		console.dir(ast);
 		if(_.isArray(ast)) {
 			for(var i = 0, l = ast.length; i < l; i++) {
 				if(!eval(ast[i], env)) {
