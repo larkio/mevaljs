@@ -16,3 +16,4 @@ build/themes
 .DS_Store
 node_modules
 bower_components
+*.bak
