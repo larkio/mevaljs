@@ -27,42 +27,42 @@ define(['underscore', 'pegjsParser'], function(_, pegjsParser) {
 		if("min-height" === featureType) {
 			var pixels = getPixels(value);
 
-			if(env.height > pixels) {
+			if(env.height >= pixels) {
 				return true;
 			}
 		}
 		else if("min-width" === featureType) {
 			var pixels = getPixels(value);
 
-			if(env.width > pixels) {
+			if(env.width >= pixels) {
 				return true;
 			}
 		}
 		else if("max-height" === featureType) {
 			var pixels = getPixels(value);
 
-			if(env.height < pixels) {
+			if(env.height <= pixels) {
 				return true;
 			}
 		}
 		else if("max-width" === featureType) {
 			var pixels = getPixels(value);
 
-			if(env.width < pixels) {
+			if(env.width <= pixels) {
 				return true;
 			}
 		}
 		else if("min-resolution" === featureType) {
 			var dpi = getDpi(value);
 
-			if(env.resolution > dpi) {
+			if(env.resolution >= dpi) {
 				return true;
 			}
 		}
 		else if("max-resolution" === featureType) {
 			var dpi = getDpi(value);
 
-			if(env.resolution < dpi) {
+			if(env.resolution <= dpi) {
 				return true;
 			}
 		}
