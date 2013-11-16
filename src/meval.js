@@ -8,7 +8,7 @@ define([
   };
 
   // Properties
-  mylib.VERSION = '1.0.0';
+  mylib.VERSION = '0.0.1';
 
   // Methods
   mylib.parse = parse;
