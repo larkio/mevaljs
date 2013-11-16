@@ -1,6 +1,6 @@
 {
-  "name": "requirejs-library",
-  "version": "1.0.0",
+  "name": "mevaljs",
+  "version": "0.0.1",
 
   "dependencies": {
     "underscore-amd": "latest"
